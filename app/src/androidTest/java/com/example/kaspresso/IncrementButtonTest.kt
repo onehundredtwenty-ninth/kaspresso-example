@@ -9,15 +9,7 @@ import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
 
-class IncrementButtonTest : TestCase(kaspressoBuilder = Kaspresso.Builder.withForcedAllureSupport()) {
-
-    @get:Rule
-    var activityRule = activityScenarioRule<MainActivity>()
-    @get:Rule
-    var runtimePermission : GrantPermissionRule = GrantPermissionRule.grant(
-        Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE
-    )
+class IncrementButtonTest : BaseTest() {
 
     @Test
     fun increaseButtonShouldIncreaseValueTest() = run {
